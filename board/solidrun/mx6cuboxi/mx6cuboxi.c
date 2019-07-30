@@ -186,7 +186,8 @@ int board_mmc_getcd(struct mmc *mmc)
 
 	switch (cfg->esdhc_base) {
 	case USDHC2_BASE_ADDR:
-		ret = !gpio_get_value(USDHC2_CD_GPIO);
+		/* ret = !gpio_get_value(USDHC2_CD_GPIO); */
+		ret = (mmc_get_op_cond(mmc) < 0) ? 0 : 1; /* eMMC/uSDHC2 has no CD GPIO */
 		break;
 	case USDHC3_BASE_ADDR:
 		ret = (mmc_get_op_cond(mmc) < 0) ? 0 : 1; /* eMMC/uSDHC3 has no CD GPIO */
