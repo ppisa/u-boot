@@ -567,7 +567,8 @@ dtb-$(CONFIG_MX6QDL) += \
 	imx6q-wandboard-revb1.dtb \
 	imx6qp-sabreauto.dtb \
 	imx6qp-sabresd.dtb \
-	imx6qp-wandboard-revd1.dtb
+	imx6qp-wandboard-revd1.dtb \
+	imx6dl-minifor-proc-v1-emmc-som-v15.dtb
 
 dtb-$(CONFIG_MX6SL) += imx6sl-evk.dtb
 
